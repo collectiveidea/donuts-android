@@ -1,8 +1,12 @@
 apply plugin: 'com.android.application'
 
+def gitSha = "git describe --long --dirty --abbrev=10 --tags".execute([], project.rootDir).text.
+    trim()
+
 android {
   compileSdkVersion 25
   buildToolsVersion "25.0.0"
+
   defaultConfig {
     applicationId "com.collectiveidea.donuts"
     minSdkVersion 16
@@ -11,7 +15,13 @@ android {
     versionName "1.0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
+
   buildTypes {
+    debug {
+      applicationIdSuffix ".debug"
+      versionNameSuffix "-debug-$gitSha"
+    }
+
     release {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
