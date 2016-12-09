@@ -39,6 +39,8 @@ dependencies {
   compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.5-2"
   testCompile "org.jetbrains.kotlin:kotlin-test:1.0.5-2"
 
+  compile 'com.jakewharton.timber:timber:4.4.0'
+
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
