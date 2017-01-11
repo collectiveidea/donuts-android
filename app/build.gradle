@@ -3,7 +3,7 @@ apply plugin: "kotlin-android"
 
 android {
   compileSdkVersion 25
-  buildToolsVersion "25.0.1"
+  buildToolsVersion "25.0.2"
   defaultConfig {
     applicationId "com.collectiveidea.donuts"
     minSdkVersion 19
@@ -34,12 +34,12 @@ kapt {
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
 
-  compile 'com.android.support:appcompat-v7:25.0.1'
+  compile 'com.android.support:appcompat-v7:25.1.0'
 
-  compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.5-2"
-  testCompile "org.jetbrains.kotlin:kotlin-test:1.0.5-2"
+  compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.6"
+  testCompile "org.jetbrains.kotlin:kotlin-test:1.0.6"
 
-  compile 'com.jakewharton.timber:timber:4.4.0'
+  compile 'com.jakewharton.timber:timber:4.5.0'
 
   debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
   releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
