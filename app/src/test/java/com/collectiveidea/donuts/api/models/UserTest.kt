@@ -22,9 +22,9 @@ class UserTest {
     val user = jsonAdapter.fromJson(json)
 
     expect("63db9251-9c45-41ca-92d6-15e84ebea5b3") { user.id }
-    expect("vgonda") { user.github_login }
+    expect("vgonda") { user.githubLogin }
     expect("Victoria Gonda") { user.name }
-    expect("Victoria") { user.display_name }
+    expect("Victoria") { user.displayName }
   }
 }
 

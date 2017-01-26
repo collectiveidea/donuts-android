@@ -18,14 +18,14 @@ class DonutsApiTest {
 
   val observer by lazy { TestObserver<List<User>>() }
 
-  val retrofit by lazy {
+  val retrofit: Retrofit by lazy {
     Retrofit.Builder()
         .baseUrl(server.url("/"))
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
   }
-  val donutsApi by lazy { retrofit.create(DonutsApi::class.java) }
+  val donutsApi: DonutsApi by lazy { retrofit.create(DonutsApi::class.java) }
 
   @Test
   fun getTodayClaims_withNoClaims_emitsEmptyList() {
@@ -55,15 +55,15 @@ class DonutsApiTest {
 
     val user1 = User(
         id = "63db9251-9c45-41ca-92d6-15e84ebea5b3",
-        github_login = "vgonda",
+        githubLogin = "vgonda",
         name = "Victoria Gonda",
-        display_name = "Victoria"
+        displayName = "Victoria"
     )
     val user2 = User(
         id = "02e54e6e-1501-4634-88b2-b8e10823c19b",
-        github_login = "shekibobo",
+        githubLogin = "shekibobo",
         name = "Josh Kovach",
-        display_name = "Josh"
+        displayName = "Josh"
     )
 
     server.enqueue(MockResponse().setBody(claimsJson))

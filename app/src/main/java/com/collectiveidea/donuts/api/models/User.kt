@@ -1,3 +1,10 @@
 package com.collectiveidea.donuts.api.models
 
-data class User(val id: String, val github_login: String, val name: String, val display_name: String)
+import com.squareup.moshi.Json
+
+data class User(
+    val id: String,
+    @Json(name = "github_login") val githubLogin: String,
+    val name: String,
+    @Json(name = "display_name") val displayName: String
+)
