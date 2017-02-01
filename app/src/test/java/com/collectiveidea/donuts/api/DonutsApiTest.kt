@@ -2,7 +2,6 @@ package com.collectiveidea.donuts.api
 
 import com.collectiveidea.donuts.api.models.User
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import io.reactivex.Observable
 import io.reactivex.observers.TestObserver
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -10,7 +9,6 @@ import org.junit.Rule
 import org.junit.Test
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.GET
 import kotlin.test.expect
 
 class DonutsApiTest {
@@ -25,7 +23,10 @@ class DonutsApiTest {
         .addConverterFactory(MoshiConverterFactory.create())
         .build()
   }
-  val donutsApi: DonutsApi by lazy { retrofit.create(DonutsApi::class.java) }
+  val donutsApi: DonutsApi by lazy {
+    retrofit.create(
+        DonutsApi::class.java)
+  }
 
   @Test
   fun getTodayClaims_withNoClaims_emitsEmptyList() {
@@ -74,9 +75,3 @@ class DonutsApiTest {
     expect("/api/v1/claims/today") { server.takeRequest().path }
   }
 }
-
-interface DonutsApi {
-  @GET("/api/v1/claims/today")
-  fun getTodayClaims(): Observable<List<User>>
-}
-
