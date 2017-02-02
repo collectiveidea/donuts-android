@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">Donuts</string>
+  <string name="no_donuts_today">No Donuts Today :(</string>
 </resources>
