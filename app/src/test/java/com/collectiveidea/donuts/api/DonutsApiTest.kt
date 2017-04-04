@@ -1,13 +1,13 @@
 package com.collectiveidea.donuts.api
 
 import com.collectiveidea.donuts.api.models.User
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.observers.TestObserver
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.Rule
 import org.junit.Test
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import kotlin.test.expect
 
